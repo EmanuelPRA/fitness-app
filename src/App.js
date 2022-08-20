@@ -37,7 +37,7 @@ const CalorieCalc = () =>{
   function calculate(){
     let clacCalories = 0
     if(gender === "male"){
-       clacCalories = activity * (10 * (weight) + 6.25 * (height) - 5 * (age) + 5)
+       clacCalories = activity * (10 * (weight * 2.2) + 6.25 * (height * 3.28) - 5 * (age) + 5)
        setCalories(clacCalories)
     }
   }
