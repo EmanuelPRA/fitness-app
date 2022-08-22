@@ -66,6 +66,26 @@ const CalorieCalc = () =>{
   )
 }
 
+const TreadmillCalc = () =>{
+  const [speed, setSpeed] = useState(2.5)
+  const [weight, setWeight] = useState(75)
+  const [incline, setIncline] = useState(0)
+  const [calories, setCalories] = useState(0)
+
+
+  return(
+    <>
+      <input type="number" placeholder='Speed km/h' onChange={(e) => setSpeed(e.target.value)} />
+      <input type="number" placeholder='Weight kg' onChange={(e) => setWeight(e.target.value)}/>
+      <input type="number" placeholder='Incline %' onChange={(e) => setIncline(e.target.value)}/>
+      <button onChange={(e) => setCalories(((0.2 * speed) + 0.9 * incline) + 3.5)}>Calculate</button>
+
+      <p>{calories}</p>
+    </>
+
+  )
+}
+
 
 
 function App() {
@@ -76,11 +96,13 @@ function App() {
     <>
     {calculator === "BMI" &&(<BMI/>)}
     {calculator === "CC" &&(<CalorieCalc/>)}
+    {calculator === "TC" &&(<TreadmillCalc/>)}
     
 
     <ul>
       <li><button onClick={() =>{setCalculator("BMI")}}>BMI Calculator</button></li>
       <li><button onClick={() =>{setCalculator("CC")}}>Calorie Calculator</button></li>
+      <li><button onClick={() =>{setCalculator("TC")}}>Calorie Calculator</button></li>
 
 
     </ul>
