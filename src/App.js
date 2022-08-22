@@ -78,9 +78,9 @@ const TreadmillCalc = () =>{
       <input type="number" placeholder='Speed km/h' onChange={(e) => setSpeed(e.target.value)} />
       <input type="number" placeholder='Weight kg' onChange={(e) => setWeight(e.target.value)}/>
       <input type="number" placeholder='Incline %' onChange={(e) => setIncline(e.target.value)}/>
-      <button onChange={(e) => setCalories(((0.2 * speed) + 0.9 * incline) + 3.5)}>Calculate</button>
+      <button onClick={(e) => setCalories(((0.2 * speed) + 0.9 * incline) + 3.5)}>Calculate</button>
 
-      <p>{calories}</p>
+      <p>{calories}kcal/minute</p>
     </>
 
   )
